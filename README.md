@@ -21,15 +21,15 @@ The visualization of this project was made with the Simulator which can be downl
 
 ## Basic Build Instructions
 
-I used xcode as main IDE. You can execute project with ide_profiles/xcode/PARTICLE_FILTER.xcodeproj file. 
+You can execute project with following steps.
+0. Clone this repo.
+1. Install [uWebSocketIO] by running included sh file for either Linux or Mac systems and [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) for windows.
+2. Make a build directory by running sh file: `sh build.sh`
+3. Moving to the build directory and running: `cd build && ./particle_filter` 
+4. Run the simulator and watch the results.
 
-Also you can execute project with following steps.
-0. Install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems and [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) for windows.
-1. Clone this repo.
-2. Make a build directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make` 
-4. Run it: `./particle_filter`  
-5. Run the simulator and watch the results.
+I used xcode as main IDE. You can execute project by opening ide_profiles/xcode/PARTICLE_FILTER.xcodeproj file. 
+
 ---
 ## Location Of Landmarks. 
 Here is the coordinate of landmark which were used to update the measurements and weight of each particle. 
