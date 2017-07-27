@@ -2,7 +2,7 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 [image1]: ./pictures/particle_pic.png
-[image2]: ./result_pic/newplot.png
+[image2]: ./pictures/newplot.png
 
 This is part of udacity self-driving car nanodegree project part3. In this project particle filter model was built based on c++  to estimate the location of robot in terms of map coordinate system.  This code consists of following processes.
 * Initialize the predefined number of particles(100) in my code.
