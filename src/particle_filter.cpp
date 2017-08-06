@@ -25,12 +25,9 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
     double std_x = std[0];
     double std_y = std[1];
     double std_theta = std[2];
-    
-    default_random_engine gen;
     normal_distribution<double> dist_x(x, std_x);
     normal_distribution<double> dist_y(y, std_y);
     normal_distribution<double> dist_theta(theta, std_theta);
-    
     for (int i = 0; i < num_particles; i++){
         double sample_x = dist_x(gen);
         double sample_y = dist_y(gen);
@@ -55,10 +52,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[], double velocit
     double std_x = std_pos[0];
     double std_y = std_pos[1];
     double std_theta = std_pos[2];
-    
-    default_random_engine gen;
     for(int i = 0 ; i < num_particles ; i++){
-
         double theta = particles[i].theta;
         normal_distribution<double> dist_x(particles[i].x, std_x);
         normal_distribution<double> dist_y(particles[i].y, std_y);
@@ -118,6 +112,9 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
                         obs_map.y = map_y;
                     }
                 }
+                else{
+                    particles[i].weight = 0 ; 
+                }
             }
            associated.push_back(obs_map);
         }
@@ -159,7 +156,7 @@ void ParticleFilter::resample() {
     
 
     std::vector<Particle> particles_temp;
-    default_random_engine gen;
+    //default_random_engine gen;
     discrete_distribution<int> prob(weights.begin(), weights.end());
 
     for(int i = 0 ; i < particles.size() ; i++){

@@ -8,6 +8,7 @@
 
 #ifndef PARTICLE_FILTER_H_
 #define PARTICLE_FILTER_H_
+#include <random>
 
 #include "helper_functions.h"
 
@@ -37,12 +38,14 @@ class ParticleFilter {
 	
 	// Vector of weights of all particles
 	std::vector<double> weights;
+
 	
 public:
 	
+    std::default_random_engine gen;
+
 	// Set of current particles
 	std::vector<Particle> particles;
-
 	// Constructor
 	// @param M Number of particles
 	ParticleFilter() : num_particles(0), is_initialized(false) {}
@@ -113,6 +116,8 @@ public:
 	const bool initialized() const {
 		return is_initialized;
 	}
+
+
 };
 
 
